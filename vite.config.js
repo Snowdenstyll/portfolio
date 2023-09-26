@@ -9,11 +9,4 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    build: {
-        rollupOptions: {
-          input: {
-            main: resolve(__dirname, 'index.php'),
-          },
-        },
-      },
 });
