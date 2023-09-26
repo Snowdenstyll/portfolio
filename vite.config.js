@@ -9,4 +9,7 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public/assets/', // This should match the path you use in your Blade template
+    },
 });
