@@ -7,17 +7,11 @@
 		<title>{{ getenv('APP_NAME') ?? 'Leaf MVC' }}</title>
 		<link rel="shortcut icon" href="https://leafphp.dev/logo-circle.png" type="image/x-icon">
 
-		{{-- assets() points to the public/assets folder --}}
-		{{--  <link rel="stylesheet" href="{{ assets('css/styles.css') }}"> --}}
-
-		{{-- ViewsPath() points to app/views --}}
-		{{-- <link rel="stylesheet" href="{{ ViewsPath('css/app.css') }}"> --}}
-
-		<?php echo vite(['app/views/js/app.js']); ?>
+		<link rel="stylesheet" href="{{ ViewsPath('css/template.css') }}">
+		<script src="{{ ViewsPath('js/app.js')}}"></script>
 
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-		<link rel="modulepreload" href="/build/manifest.json">
 
 	</head>
 
