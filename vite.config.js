@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import leaf from '@leafphp/vite-plugin';
+import { resolve } from 'path';
 
 export default defineConfig({
     plugins: [
@@ -8,4 +9,11 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        rollupOptions: {
+          input: {
+            main: resolve(__dirname, 'index.php'),
+          },
+        },
+      },
 });
