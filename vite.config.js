@@ -9,22 +9,3 @@ export default defineConfig({
         }),
     ],
 });
-
-
-/* import path from require('path');
-
-export default defineConfig {
-  root: path.resolve(__dirname, 'src'),
-  build: {
-    outDir: '../dist'
-    },
-    server: {
-        port: 8080
-    },
-    plugins: [
-        leaf({
-            input: ['app/views/js/app.js', 'app/views/css/app.css'],
-            refresh: true,
-        }),
-    ],
-} */
