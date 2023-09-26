@@ -5,13 +5,13 @@ app()->get('/', function () {
 });
 
 app()->get('/contact', function () {
-    render('contact');
+    render('index');
 });
 
 app()->get('/projects', function () {
-    render('contact');
+    render('index');
 });
 
 app()->get('/resume', function () {
-    render('contact');
+    render('index');
 });

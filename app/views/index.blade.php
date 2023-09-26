@@ -17,6 +17,8 @@
 
 		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<link rel="modulepreload" href="/build/manifest.json">
+
 	</head>
 
 	<body class="d-flex flex-column h-100">
