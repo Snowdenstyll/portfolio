@@ -32,31 +32,11 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 | Quickly use our environment variables
 |
 */
-
 try {
-   \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__))->load();
+    \Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__))->load();
 } catch (\Throwable $th) {
     trigger_error($th);
 }
-
-/* define('ENV', $_ENV['APP_ENV'] ?? 'local');
-
-if (ENV === 'production') {
-    app()->config([
-        'mode' => ENV,
-        'debug' => false,
-    ]);
-} */
-
-/*
-|--------------------------------------------------------------------------
-| Load application paths
-|--------------------------------------------------------------------------
-|
-| Tell Leaf MVC Core where to locate application paths
-|
-*/
-Leaf\Core::paths(PathsConfig());
 
 /*
 |--------------------------------------------------------------------------
@@ -90,13 +70,16 @@ Leaf\View::attach(\Leaf\Blade::class);
 
 /*
 |--------------------------------------------------------------------------
-| Additional Leaf Database Config
+| Load Leaf configuration
 |--------------------------------------------------------------------------
 |
-| Load leaf database configuration
+| Leaf MVC allows you to customize Leaf and it's modules using
+| configuration files defined in the config folder. This line
+| loads the configuration files and makes them available to
+| your application.
 |
 */
-Leaf\Database::config(DatabaseConfig());
+Leaf\Core::loadApplicationConfig();
 
 /*
 |--------------------------------------------------------------------------
@@ -104,52 +87,24 @@ Leaf\Database::config(DatabaseConfig());
 |--------------------------------------------------------------------------
 |
 | Sync Leaf Db with ORM and connect to the database
-| This allows you to use Leaf Db without having to initialize it
-| in your controllers.
+| This allows you to use Leaf Db and Leaf Auth without
+| having to initialize them in your controllers.
 |
-| This is optional, you can still use Leaf Db in your controllers. If you
-| want to opt into this, just uncomment the line below.
+| If you want to use a different connection from those
+| used in, your models, you can remove the line below and
+| add your own connection with:
+| db()->connect(...)
 |
+| **Uncomment the line below to use Leaf Db or Auth**
 */
-// Leaf\Database::syncLeafDb();
+// \Leaf\Database::initDb();
 
 /*
 |--------------------------------------------------------------------------
-| Initialise Config
+| Run your Leaf MVC application
 |--------------------------------------------------------------------------
 |
-| Pass your application configuration into your leaf app.
+| This line brings in all your routes and starts your application
 |
 */
-app()->config(AppConfig());
-
-/*
-|--------------------------------------------------------------------------
-| Default fix for CORS
-|--------------------------------------------------------------------------
-|
-| This just prevents the connection client from throwing
-| CORS errors at you.
-|
-*/
-app()->cors(CorsConfig());
-
-/*
-|--------------------------------------------------------------------------
-| Route Config
-|--------------------------------------------------------------------------
-|
-| Require app routes.
-|
-*/
-require dirname(__DIR__) . '/app/routes/index.php';
-
-/*
-|--------------------------------------------------------------------------
-| Run Leaf Application
-|--------------------------------------------------------------------------
-|
-| Require app routes
-|
-*/
-app()->run();
+\Leaf\Core::runApplication();
