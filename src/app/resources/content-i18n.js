@@ -106,11 +106,8 @@ const createI18nContent = (t) => {
                 {
                     name: 'University of Jakarta',
                     description: <>{t(`about.studies.institutions.University of Jakarta.description`)}</>,
+                    program_overview: <>{t("about.studies.institutions.University of Jakarta.program_overview")}</>
                 },
-                {
-                    name: 'Build the Future',
-                    description: <>{t("about.studies.institutions.Build the Future.description")}</>,
-                }
             ]
         },
         technical: {
@@ -183,12 +180,12 @@ const createI18nContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
+            {
                 src: '/images/gallery/img-03.jpg',
                 alt: 'image',
                 orientation: 'vertical'
             },
-            { 
+            {
                 src: '/images/gallery/img-04.jpg',
                 alt: 'image',
                 orientation: 'horizontal'
@@ -223,7 +220,7 @@ const createI18nContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
+            {
                 src: '/images/gallery/img-11.jpg',
                 alt: 'image',
                 orientation: 'vertical'
@@ -238,7 +235,7 @@ const createI18nContent = (t) => {
                 alt: 'image',
                 orientation: 'horizontal'
             },
-            { 
+            {
                 src: '/images/gallery/img-14.jpg',
                 alt: 'image',
                 orientation: 'horizontal'

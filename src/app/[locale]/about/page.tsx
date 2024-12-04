@@ -45,22 +45,22 @@ export default function About(
     const t = useTranslations();
     const {person, about, social } = renderContent(t);
     const structure = [
-        { 
+        {
             title: about.intro.title,
             display: about.intro.display,
             items: []
         },
-        { 
+        {
             title: about.work.title,
             display: about.work.display,
             items: about.work.experiences.map(experience => experience.company)
         },
-        { 
+        {
             title: about.studies.title,
             display: about.studies.display,
             items: about.studies.institutions.map(institution => institution.name)
         },
-        { 
+        {
             title: about.technical.title,
             display: about.technical.display,
             items: about.technical.skills.map(skill => skill.title)
@@ -303,7 +303,7 @@ export default function About(
                                 {about.studies.institutions.map((institution, index) => (
                                     <Flex
                                         key={`${institution.name}-${index}`}
-                                        fillWidth gap="4"
+                                        fillWidth gap="8"
                                         direction="column">
                                         <Text
                                             id={institution.name}
@@ -315,8 +315,28 @@ export default function About(
                                             onBackground="neutral-weak">
                                             {institution.description}
                                         </Text>
+                                        {Array.isArray(institution.program_overview) && (
+                                            <Flex direction="column" gap="8">
+                                                {institution.program_overview.map((overview, index) => (
+                                                    <Flex key={index} direction="column" gap="4">
+                                                        {overview.coursework.length > 0 && (
+                                                            <Text variant="body-default-m">
+                                                                <span className="font-strong">Coursework</span>: {overview.coursework.join(', ')}
+                                                            </Text>
+                                                        )}
+                                                        {overview.technologies.length > 0 && (
+                                                            <Text variant="body-default-m">
+                                                                <span className="font-strong">Technologies</span>: {overview.technologies.join(', ')}
+                                                            </Text>
+                                                        )}
+                                                    </Flex>
+                                                ))}
+
+                                            </Flex>
+                                        )}
                                     </Flex>
                                 ))}
+
                             </Flex>
                         </>
                     )}
