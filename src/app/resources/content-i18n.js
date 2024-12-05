@@ -145,7 +145,12 @@ const createI18nContent = (t) => {
                     ]
                 }
             ]
-        }
+        },
+        resume: {
+            display: true, // set to false to hide this section
+            title: t("about.resume.title"),
+            image: t("about.resume.image"),
+        },
     }
 
     const blog = {

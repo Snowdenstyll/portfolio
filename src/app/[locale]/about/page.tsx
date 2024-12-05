@@ -65,6 +65,11 @@ export default function About(
             display: about.technical.display,
             items: about.technical.skills.map(skill => skill.title)
         },
+        {
+            title: about.resume.title,
+            display: true,
+            items: []
+        }
     ]
     return (
         <Flex
@@ -391,6 +396,34 @@ export default function About(
                                 ))}
                             </Flex>
                         </>
+                    )}
+
+                    {about.resume.display && (
+                    <>
+                        <Heading
+                            as="h2"
+                            id={about.resume.title}
+                            variant="display-strong-s" marginBottom="40">
+                            {about.resume.title}
+                        </Heading>
+                        <Flex
+                            fillWidth
+                            paddingTop="m"
+                            paddingLeft="40"
+                            wrap>
+                            <object
+                                data="/images/resume.pdf"
+                                type="application/pdf"
+                                width="100%"
+                                height="850"
+                                style={{ border: '1px solid #ccc' }}>
+                                <p>
+                                    Your browser doesn't support PDF viewing.
+                                    <a href="/images/resume.pdf">Download PDF</a>
+                                </p>
+                            </object>
+                        </Flex>
+                    </>
                     )}
                 </Flex>
             </Flex>

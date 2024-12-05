@@ -80,10 +80,10 @@ const about = {
                 ],
                 images: [ // optional: leave the array empty if you don't want to display images
                     {
-                        src: '/images/projects/project-01/cover-01.jpg',
-                        alt: 'Once UI Project',
+                        src: '/images/projects/tbg/cover-01.png',
+                        alt: 'The Beer Guy',
                         width: 16,
-                        height: 9
+                        height: 11
                     }
                 ]
             },
@@ -95,7 +95,14 @@ const about = {
                     <>Increased Brand Engagement: Designed and launched a web platform integrated with social media campaigns, driving a 40% increase in customer engagement and visibility during the COVID-19 pandemic.</>,
                     <>Optimized Operations: Built a streamlined onboarding process for employees, reducing training time by 30% and significantly enhancing daily operational efficiency for the delivery service.</>
                 ],
-                images: [ ]
+                images: [ // optional: leave the array empty if you don't want to display images
+                    {
+                        src: '/images/projects/detour/cover-01.png',
+                        alt: 'The Beer Guy',
+                        width: 16,
+                        height: 11
+                    }
+                ]
             }
         ]
     },
@@ -116,7 +123,7 @@ const about = {
         ]
     },
     technical: {
-        display: true, // set to false to hide this section
+        display: false, // set to false to hide this section
         title: 'Technical skills',
         skills: [
             {
@@ -150,7 +157,12 @@ const about = {
                 ]
             }
         ]
-    }
+    },
+    resume: {
+        display: true, // set to false to hide this section
+        title: 'Resume',
+        image: '/images/projects/tbg/cover-01.png',
+    },
 }
 
 const blog = {
