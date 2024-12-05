@@ -3,7 +3,7 @@ import React from 'react';
 import { Heading, Flex, Text, Button,  Avatar, RevealFx, Arrow } from '@/once-ui/components';
 import { Projects } from '@/components/work/Projects';
 
-import { baseURL, routes, renderContent } from '@/app/resources'; 
+import { baseURL, routes, renderContent } from '@/app/resources';
 import { Mailchimp } from '@/components';
 import { Posts } from '@/components/blog/Posts';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
@@ -80,7 +80,7 @@ export default function Home(
 				paddingY="l" gap="m">
 					<Flex
 						direction="column"
-						fillWidth maxWidth="s" gap="m">
+						maxWidth="s" gap="m">
 						<RevealFx
 							translateY="4">
 							<Heading
@@ -124,7 +124,7 @@ export default function Home(
 							</Flex>
 						</RevealFx>
 					</Flex>
-				
+
 			</Flex>
 			<RevealFx translateY="16" delay={0.6}>
 				<Projects range={[1,1]} locale={locale}/>
