@@ -408,8 +408,6 @@ export default function About(
                         </Heading>
                         <Flex
                             fillWidth
-                            paddingTop="m"
-                            paddingLeft="40"
                             wrap>
                             <object
                                 data="/images/resume.pdf"
