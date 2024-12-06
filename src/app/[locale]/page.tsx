@@ -83,11 +83,13 @@ export default function Home(
 						maxWidth="s" gap="m">
 						<RevealFx
 							translateY="4">
-							<Heading
-								wrap="balance"
-								variant="display-strong-l">
-								{home.headline}
-							</Heading>
+							<Flex fillWidth>
+								<Heading
+									wrap="balance"
+									variant="display-strong-l">
+									{home.headline}
+								</Heading>
+							</Flex>
 						</RevealFx>
 						<RevealFx
 							translateY="8" delay={0.2}>
